@@ -1,0 +1,266 @@
+.process {
+  .vh {
+    height: 100vh;
+    background-color: rgba(255,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vw;
+    font-weight: bold;
+    
+    &:before {
+    content: '100VH';
+    color: rgba(0,0,0,0.5);
+    }
+  }
+  
+  // 
+  .scenes {
+    position: relative;
+    padding-top: 0;
+    &__wrap,
+    &__items {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    &__wrap {
+      padding-top: 0;
+    }
+  
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+  
+  // 滾動區塊高度
+  .scene-spacing {
+    height: 100vh;
+  }
+  
+  // 各滾動區塊
+  .scene {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0rem 10%;
+    margin: 0 auto;
+    
+      
+    &__grid {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      grid-column-gap: 4em;
+      margin: 0 auto;
+      
+      @media (min-width: 50em) {
+        grid-column-gap: 8em;
+      }
+    }
+      
+    &__header {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
+      align-self: start;
+      
+      & > div {
+        position: relative;
+        top: -15%;
+      }
+    }
+  
+    &__title {
+      @include font-size(48px);
+      margin-bottom: 16px;
+      position: relative;
+      &::before {
+        content: "";
+        @include v-center;
+        left: -68px;
+        @include size(60px);
+      }
+    }
+    
+    &__list {
+      li {
+        padding-left: 12px;
+        @include font-size(24px);
+        position: relative;
+  
+        &::before {
+          content: "";
+          position: absolute;
+          top: 12px;
+          left: 0;
+          @include size(4px, 12px);
+          border-radius: 4px;
+          background-color: $secondary;
+        }
+      }
+    }
+  
+    &__figure {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      margin-left: auto;
+      padding: 0;
+    }
+  
+    &__img {
+      display: block;
+      // height: 100vh;
+      width: 100%;
+      max-height: 90vh;
+      height: auto;
+    }
+    &__content {
+      padding-left: 144px;
+      position: relative;
+      top: 40vh;
+      &.process1 h3::before {
+        background: center / cover url(../img/icon/light.png)
+      }
+      &.process2 h3::before {
+        background: center / cover url(../img/icon/eye.png)
+      }
+      &.process3 h3::before {
+        background: center / cover url(../img/icon/chess_king.png)
+      }
+      &.process4 h3::before {
+        background: center / cover url(../img/icon/chart.png)
+      }
+      &.process5 h3::before {
+        background: center / cover url(../img/icon/award.png)
+      }
+  
+    }
+  
+    @include media-breakpoint-down(md) {
+      padding: 0 15px;
+      &__content {
+        padding-left: 34px;
+      }
+      
+    }
+  }
+  
+  // 圖片 + 標題
+  .scene_fixed {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0rem 10%;
+    margin: 0 auto;
+    .scene_grid {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      grid-column-gap: 4em;
+      margin: 0 auto;
+      
+      @media (min-width: 50em) {
+        grid-column-gap: 8em;
+  
+      }
+    }
+    .scene__header {
+      align-self: start;
+      position: relative;
+      top: 20%;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      .section_title {
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        h2 {
+          &.en {
+            width: auto;
+            flex: 1 0 0%;
+            max-width: 100%;
+            position: relative;
+            bottom: 32px;
+            text-align: end;
+            padding-right: 8px;
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              @include size(100%, 1px);
+              background-color: $primary-color-light-50;
+            }
+          }
+        }
+      }
+  
+    }
+    .scene__figure {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      margin-left: auto;
+      padding: 0;
+  
+      & > div {
+        position: relative;
+      }
+      img {
+        display: block;
+        // height: 100vh;
+        width: 100%;
+        max-height: 90vh;
+        height: auto;
+      }
+      .anch_list {
+        @include size(100%);
+        @include center;
+        z-index: 100;
+        a {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include size(35%);
+          transform: translate(-50%, -50%);
+  
+          &:nth-child(1) {
+            top: 18%;
+          }
+  
+          &:nth-child(2) {
+            top: 46%;
+            left: 84%;
+          }
+  
+          &:nth-child(3) {
+            top: 83%;
+            left: 72%;
+          }
+  
+          &:nth-child(4) {
+            top: 80%;
+            left: 30%;
+          }
+  
+          &:nth-child(5) {
+            top: 44%;
+            left: 17%;
+          }
+        }
+      }
+    }
+    @include media-breakpoint-down(md) {
+      padding: 0 15px;
+      
+    }
+  }
+  
+}

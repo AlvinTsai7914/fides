@@ -1,0 +1,19 @@
+// bootstrap 設定
+@import '../libs/bootstrap/scss/functions';
+@import './variable';
+@import '../libs/bootstrap/scss/variables';
+@import '../libs/bootstrap/scss/bootstrap';
+
+// slick
+@import '../libs/slick/slick';
+@import '../libs/slick/slick-theme';
+
+// 基礎設定
+@import './custom-mixins';
+@import './global';
+@import './layout';
+@import './part';
+
+// 首頁
+@import './fortieth';
+@import './index';

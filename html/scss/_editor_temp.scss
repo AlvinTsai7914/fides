@@ -1,0 +1,38 @@
+main {
+    min-height: 100vh;
+    background: top  / contain repeat url(../img/editor_temp_bg.png);
+    @include media-breakpoint-down(sm) {
+        background-image: url(../img/editor_temp_bg_m.png)
+    }
+}
+.custom-editor h1 {
+    @include font-size(48px);
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: $primary;
+    @include media-breakpoint-down(sm) {
+        @include font-size(42px);
+    }
+}
+.custom-editor .title {
+    @include font-size(32px);
+    color: #4d4d4d;
+    @include media-breakpoint-down(sm) {
+        @include font-size(28px);
+    }
+}
+.custom-editor .title-sub {
+    @include font-size(26px);
+    @include media-breakpoint-down(sm) {
+        @include font-size(24px);
+    }
+}
+.custom-editor .text {
+    @include font-size(18px);
+    @include media-breakpoint-down(sm) {
+        @include font-size(16px);
+    }
+}
+footer {
+    margin-top: 120px;
+}

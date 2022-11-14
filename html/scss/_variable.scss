@@ -1,0 +1,156 @@
+// bootstrap 變數
+// @import './variable';: #00d3be!default;
+$primary: #0069AA!default; 
+$secondary: #1CB4A1 !default;
+$success: #94D8A4 !default;
+$info: #369bfd !default;
+$warning: #ffd22c !default;
+$danger: #fd3635 !default;
+$light: #C4C4C4 !default;
+$dark: #000000 !default;
+$gold: #D8A272;
+$primary-color: #0069AA !important;
+$secondary-color: #1CB4A1 !important;
+
+// 蓋掉 bootstrap預設字體樣式
+$font-family-sans-serif:'Roboto', 'Noto Sans TC', sans-serif, Arial, "微軟正黑體", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+// 蓋掉bootstrap應影
+$box-shadow:  0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-secondary: 0px 10px 12px 0 rgba(0, 0, 0, 0.15);
+$box-shadow-tablist: 0px 6px 20px 0 rgba(0, 0, 0, 0.15);
+$tag-shadow: 4px 4px 0 0 rgba(152, 152, 152, .3);
+$tag-shadow-left: -4px 4px 0 0 rgba(152, 152, 152, .3);
+$text-shadow: 0 4px 10px 0 rgba(0, 0, 0, .35);
+$text-shadow-hover: 0 4px 20px 0 rgba(0, 0, 0, .3);
+
+// 客製化顏色
+$main-dark: #1A1A1A;
+$dark-secondary: #333333;
+
+$main-gray: #808080 !default;
+$gray: #CCCCCC !default;
+$light-gray: #EFEFEF!default;
+$light-gray-scale5: #F3F3F3;
+$light-gray-secondary: rgba(230, 230, 230, 0.4)!default;
+$light-gray-80: rgba(230, 230, 230, .8)!default;
+$light-yellow: rgb(255, 225, 107, 0.8);
+$light-green: #ECF9F9;
+$lake-green: #45C7BF;
+$lake-green-dark: #18ACC4;
+$yellow: #FABA14;
+
+/* 主色應用 */
+$primary-color-light: #74A0CD !default;
+$primary-color-light-40: rgba(116, 160, 205, .5) !default;
+$primary-color-light-50: rgba(116, 160, 205, .4) !default;
+$primary-color-light-10: rgba(116, 160, 205, .1) !default;
+
+/* 輔色應用 */
+$primary-color-light: rgba(28, 180, 161, .5) !default;
+
+$gold-gradient: linear-gradient(to right, #98692F 0%,#AC7F30 8%, #D6A232 20%, #F4ECA7 40%, #CF9D30 45%, #A6722B 60%, #935926 70%, #E3B034 90%, #F2CF73 100%);
+$gold-gradient-v2: linear-gradient(to right, #F9DE84 0%, #AC773A 33.3%, #F9DE84 66.6%, #AC773A 100%);
+
+/* 漸層應用 */
+$primary-gradient: linear-gradient(to right, rgba(255, 214, 0, 1) 0%, rgba(69, 199, 191, 1) 100%);
+$primary-gradient-reverse: linear-gradient(to left, rgba(255, 214, 0, 1) 0%, rgba(69, 199, 191, 1) 100%);
+$primary-gradient-v: linear-gradient(to bottom, #133469 0%, #0069AA 100%);
+
+$secondary-gradient-v: linear-gradient(to bottom, #1CB4A1, #0069AA);
+$secondary-gradient-v-hover: linear-gradient(330deg, #1CB4A1, #0069AA);
+/*  boostrap 參數調整 */
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grid-breakpoints: map-merge(
+  (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl:1400px //新增
+  ),
+  $grid-breakpoints
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$container-max-widths: map-merge(
+  (
+    sm: 100%,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px //新增
+  ),
+  $container-max-widths
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+
+//----------文字優雅降級
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  // font-size: $size;
+  font-size: calculateRem($size);
+}
+//usage
+// .example-font-size {
+//     @include font-size(14px)
+// }
+
+$type-scales: (
+  minor-second: 1.067,
+  major-second: 1.125,
+  minor-third: 1.2,
+  major-third: 1.25,
+  perfect-fourth: 1.333,
+  augmented-fourth: 1.414,
+  perfect-fifth: 1.5,
+  golden-ratio: 1.618,
+);
+
+@function check-type-scale-value($scale) {
+  // Check $scale against the values in $type-scales.
+  @if map-has-key($type-scales, $scale) {
+    // If the value of $scale is defined in
+    // $type-scales, return the value of $scale.
+    @return map-get($type-scales, $scale);
+
+    // If the value of $scale is not defined in the
+    // $type-scales map, check if the value is a number
+    // and that the number is a unitless value.
+  } @else if type-of($scale) == number and unitless($scale) {
+    // If the value of $scale is a unitless number,
+    // return the number.
+    @return $scale;
+
+    // Lastly, should the value passed to $scale be neither
+    // found in the $type-scales map nor a unitless number,
+    // throw a Sass error to explain the issue.
+  } @else {
+    // Throw a Sass error if the $scale value is
+    // neither found in the $type-scales map nor
+    // a unitless number.
+    @error "Sorry, `#{$scale}` is not a unitless number value or a pre-defined key in the $type-scales map.";
+  }
+}

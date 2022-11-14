@@ -1,0 +1,576 @@
+.custom-editor {
+  $primary:       #0069AA!default; 
+  $primaryLight:  #74A0CD;
+  $secondary:     #1CB4A1 !default;
+  $light:         white;
+  $gray:          #4D4D4D;
+  $dark:          $dark-secondary;
+  $green:         #1CB4A1;
+  $tableBorder:   #dee2e6;  
+  $tableHeadBg:   #696767;
+  
+  ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    li {
+      list-style: disc;
+    }
+  }
+  
+  .navbar{
+    background-color: $primary;
+    justify-content: center;
+    img{
+      height: 66px;
+    }
+  }
+  
+  footer{
+    background-color: $primaryLight;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .container, .container-fluit {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .mega-title {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $primary;
+    @media (max-width: 992px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 576px) {
+      font-size: 2rem;
+    }
+  }
+  /* 主標題 */
+  .title {
+    font-weight: bold;
+    margin: 0.5rem auto;
+    font-size: 2.25rem;
+    line-height: 1.3;
+    color: $gray;
+    @media (max-width: 992px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 576px) {
+      font-size: 1.75rem;
+    }
+  }
+  /* 副標題 */
+  .title-sub {
+    margin: 0.5rem auto;
+    font-size: 1.625rem;
+    font-weight: bold;
+    color: $gray;
+    @media (max-width: 992px) {
+      font-size: 1.5rem;
+    }
+    @media (max-width: 576px) {
+      font-size: 1.375rem;
+    }
+  }
+  /* 內容 */
+  .text {
+    margin: 0.5rem auto;
+    font-size: 1rem;
+  }
+  /* 圖片、影片的說明文字 */
+  .text-sub {
+    margin: 0.5rem auto;
+    font-size: 0.875rem;
+    text-align: center;
+    color: $gray;
+  }
+  /* 圖片上的文字 */
+  .text-under {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img-fluid{
+    width: 100%;
+  }
+  hr {
+    background-color: $secondary;
+  }
+  .table{
+    margin-top: 1rem;
+    font-size: 18px;
+    th{
+      border: 1px solid $tableBorder;
+      background-color: $tableHeadBg;
+      color: $light;
+    }
+    td{
+      border: 1px solid $tableBorder;
+      background-color: $light;
+    }
+  }
+  
+  .img-box-round {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    img {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  /* 人物姓名 */
+  .person-name {
+    background: linear-gradient(270deg, rgba(115, 51, 136, 0.4) 0%, #733388 21.35%, #733388 78.13%, rgba(115, 51, 136, 0.4) 100%);
+    color: $light;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 2.3;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  /* 人物職稱 */
+  .person-title {
+    color: $primary;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+  /* 人物介紹 */
+  .person-intro {
+    color: $dark;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .member-img {
+    max-width: 40%;
+  }
+  /* 會員資料 */
+  .member-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+  }
+  /* 會員姓名 */
+  .member-name {
+    color: $primary;
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+  /* 會員職稱 */
+  .member-title {
+    color: $dark;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  /* 會員標籤 */
+  .member-intro {
+    color: $secondary;
+    background-color: rgba($color: $primaryLight, $alpha: 0.5);
+    display: inline;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 2px 6px;
+    margin-top: auto;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+  }
+  
+  // 兆票 表格[聯絡資訊]
+  .custom-table {
+    width: 100%;
+    margin: 0 auto !important;
+    border-top: 4px solid white;
+    border-left: 4px solid white;
+    p {
+      padding: 5px 0px;
+      margin: 0;
+    }
+    .col-md-4,.col-md-3,.col-md-8,.col-md-9{
+      border-right: 4px solid white;
+      border-bottom: 4px solid white;
+      display: flex;
+      align-items: center;
+    }
+    .col-md-4,
+    .col-md-3 {
+      text-align: center;
+      vertical-align: middle;
+      background-color: #F8F5F1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .col-md-8,
+    .col-md-9 {
+      background-color: #F6F6F6;
+    }
+    .right {
+      .col-md-6 {
+        border-bottom: 4px solid white;
+        display: flex;
+        align-items: center;
+        &:nth-last-child(1), &:nth-last-child(2) {
+          border-bottom: 0px;
+        }
+        &:nth-child(2n-1) {
+          border-right: 4px solid white;
+        }
+      }
+      .col-12:not(:last-child) {
+        border-bottom: 4px solid white;
+        // display: flex;
+        // align-items: center;
+        // &:nth-last-child(1), &:nth-last-child(2) {
+        //   border-bottom: 0px;
+        // }
+        // &:nth-child(2n-1) {
+        //   border-right: 4px solid white;
+        // }
+      }
+    }
+    @media all and (max-width: 768px) {
+      p{
+        text-align: start;
+      }
+  
+      .col-md-4,.col-md-3,.col-md-8,.col-md-9{
+        border-right: 4px solid white;
+        border-bottom: 4px solid white;
+        justify-content: start;
+      }
+      .right .col-md-6 {
+         &:nth-last-child(2) {
+          border-bottom: 4px solid white;
+        }
+        &:nth-child(2n-1) {
+          border-right: 0px solid white;
+        }
+      }
+    }
+  }
+  
+  // 兆票 主標副標內容[灰底]
+  .text-bg-gray {
+    padding: 20px;
+    .bg-lightgray {
+      border-radius: 16px;
+      background-color: #F6F6F6;
+    }
+    .text-purple {
+      color: #5C1979;
+    }
+  }
+  
+  // 兆票 主標副標內容[左右]
+  .center_line {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.1);
+    @media all and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  // 精承 三欄清單標題
+  .icon-list-title {
+    position: relative;
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: $primary;
+    .img-box {
+      @include size(48px);
+      position: absolute;
+      left: -58px;
+      top: 6px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    @media (max-width: 992px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 576px) {
+      font-size: 1.75rem;
+    }
+  }
+  .icon-list {
+    padding-left: 58px;
+    ul {
+      padding-left: 0;
+      margin-top: 8px;
+      li {
+        list-style: none;
+        font-size: 1.125rem;
+        position: relative;
+        padding-left: 12px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        &::before {
+          content: "";
+          width: 4px;
+          height: 12px;
+          border-radius: 9999px;
+          position: absolute;
+          top: 8px;
+          left: 0px;
+          background: $lake-green;
+        }
+      }
+    }
+
+  }
+  // 精承 標題兩欄清單
+  .icon-list-grid {
+    padding-left: 58px;
+    .icon-list-subtitle {
+      font-size: 1.25rem;
+      font-weight: bold;
+      position: relative;
+      &::before {
+        content: "";
+        width: 4px;
+        height: 12px;
+        border-radius: 9999px;
+        position: absolute;
+        top: 11px;
+        left: -12px;
+        background: $lake-green;
+      }
+    }
+    p {
+      font-size: 1.125rem;
+    }
+  }
+
+  // 行動呼籲
+  .calling-btn {
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      color: $primary;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 2.25rem;
+      font-weight: bold;
+      text-align: center;
+      color: $gray;
+      margin-bottom: 16px;
+    }
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      padding: 12px 50px;
+      margin: 0 10px 16px;
+      font-size: 1.3125rem;
+      color: white;
+      position: relative;
+      transition: 0.3s ease;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: 0;
+        width: 100%;
+        height: 150%;
+        background: linear-gradient(to bottom, #1CB4A1, #0069AA);
+        transition: 0.3s ease;
+        z-index: -1;
+      }
+      &:hover::before {
+        top: 0;
+      }
+      &:active::before {
+        background: linear-gradient(to top, #1CB4A1, #0069AA);
+      }
+    }
+    p {
+      font-size: 1.25rem;
+      text-align: center;
+    }
+    @media (max-width: 992px) {
+      h2 {
+        font-size: 2.5rem;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 2.25rem;
+      }
+      h3 {
+        font-size: 1.75rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // 精承 連結標籤群
+  .label-list {
+    width: 100%;
+    padding: 20px 30px 10px;
+    border-radius: 20px;
+    background-color: #F8F8F8;
+    h3 {
+      font-size: 1.25rem;
+      color: $primary;
+      margin-bottom: 10px;
+    }
+    a.label {
+      padding: 4px 20px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      border-radius: 9999px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $primary;
+      background-color: #E5EEF6;
+      @media (min-width: 992px) {
+        &:hover {
+          background-color: #cce2f5;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      padding: 15px 20px 10px;
+    }
+  }
+
+  // 精承 三欄卡片
+  .line-title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    h2 {
+      font-size: 2.25rem;
+      font-weight: bold;
+      color: $primary;
+      padding-right: 10px;
+    }
+    .line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: #74A0CD;
+      position: relative;
+      top: -12px;
+    }
+    @media (max-width: 992px) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+  }
+  .img-card {
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.15);
+    .img-box {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      .holder {
+        padding-bottom: 100%;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+      }
+    }
+    .content {
+      padding: 20px;
+      h3 {
+        margin-bottom: 6px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      p {
+        font-size: 1.125rem;
+        text-align: center;
+      }
+    }
+    // 非卡片樣式
+    &.img-shadow {
+      box-shadow: none;
+      .img-box {
+        border-radius: 20px;
+        box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.15);
+        .holder {
+          padding-bottom: 78%;
+        }
+      }
+      .content {
+        padding-top: 24px;
+      }
+    }
+  }
+
+  // youtube 模組
+  .yt-box {
+    position: relative;
+    .holder {
+      padding-bottom: 56.21%;
+    }
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
