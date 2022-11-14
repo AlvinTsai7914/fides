@@ -116,6 +116,7 @@
         </header>
         <main>
             <!-- 編輯器 START -->
+            <!-- custom-editor + container 包編輯器，css = style.css，無js-->
             <div class="custom-editor">
                 <!-- 大標題 -->
                 <div class="container">
@@ -486,27 +487,6 @@
     <script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- 共用js -->
     <script src="js/common.js"></script>
-
-    <script>
-        $(function () {
-            let clientImgNum = 1
-            while (clientImgNum <= 56) {
-                $("section.clients .clients_list").append(
-                    `<div class="clients_logo">
-                        <div class="img_box">
-                            <div class="holder"></div>
-                            <img src="img/client/client${clientImgNum}.png" alt="">
-                        </div>
-                    </div>`
-                );
-                clientImgNum++
-            }
-        
-            $(".nav_list__item.dropdown").on("click", function() {
-                $(this).toggleClass("-open")
-            })
-        })
-    </script>
     <!-- <script>(function () { var script = document.createElement('script'); script.src = "https://paperform.co/__embed.min.js"; document.body.appendChild(script); })()</script> -->
 </body>
 
